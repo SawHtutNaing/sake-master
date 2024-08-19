@@ -14,11 +14,16 @@ Margarita ( ပုံ , customizable -> rum -> 20% , sake - 50% , water -> 30% )
 ပုံ -> click -> 20 , check , -> json ->
 sake master bar ->
 
-User - > purpos -> customers are customizable , price -> ကြိုတွက် , အစားအသောက် မှာနိုင် , talbe ကြိုမှာ လို့ရ (ပိုက်ဆံ ) karaoke အခန်း ကြိုမှာ , strike ,  
-section -> fb group , comment , ပုံတင်လို့ရ ,
+User - > purpos -> customers are customizable , price -> ကြိုတွက် , အစားအသောက် မှာနိုင် , talbe ကြိုမှာ လို့ရ (ပိုက်ဆံ ) karaoke အခန်း
+ကြိုမှာ , strike ,  
+section -> fb group , comment , ပုံတင်လို့ရ , cocktail glass ရွေးနိုင်ပါသည်
 admin -> promotion , tax , stuff management , stuff salary ,
 
 ->
 
 ကုန်ကြမ်း ->
 rum , beer , white rum , wiskiy , sake , soju
+
+stystem -> globally
+
+( larvel app ) -> access -> public
