@@ -27,3 +27,9 @@ rum , beer , white rum , wiskiy , sake , soju
 stystem -> globally
 
 ( larvel app ) -> access -> public
+
+[
+"lime_juice" => '1/2'
+]
+
+locaohsot:..../cocktails/3

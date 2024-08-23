@@ -30,12 +30,23 @@ class CocktailSeeder extends Seeder
         $array = json_decode($response)->drinks;
 
         foreach ($array as $key => $value) {
+            $ingredient = [
+                $value->strIngredient1 => $value->strMeasure1,
+                $value->strIngredient2 => $value->strMeasure2,
+                $value->strIngredient3 => $value->strMeasure3,
+                $value->strIngredient4 => $value->strMeasure4,
+                $value->strIngredient5 => $value->strMeasure5,
+                $value->strIngredient6 => $value->strMeasure6,
 
+            ];
+
+            // dd($ingredient);
             Cocktail::create([
                 'name' => $value->strDrink,
                 'category_id' => rand(1, $categoriesCount),
-                'price' => rand(1111, 8888)
-
+                'price' => rand(1111, 8888),
+                'image' => $value->strDrinkThumb,
+                'ingredient' => json_encode($ingredient)
             ]);
         }
     }
