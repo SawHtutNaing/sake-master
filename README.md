@@ -33,3 +33,9 @@ stystem -> globally
 ]
 
 locaohsot:..../cocktails/3
+
+fe > react.thettun.com
+
++be -> lravel.thettun.com
+
+order ->

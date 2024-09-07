@@ -1,34 +1,33 @@
 <?php
 
 use App\Http\Controllers\CocktailController;
+use App\Http\Controllers\OrderRecordController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Cocktail;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+require __DIR__ . '/auth.php';
+
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    $cocktails = Cocktail::all();
+
+    return Inertia::render('Home', [
+        'cocktails' => $cocktails,
+
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+
     ]);
-});
+})->middleware([])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    $cocktails = Cocktail::all();
-    return Inertia::render(
-        'Hello',
-        [
-            'cocktails' => $cocktails
-        ]
 
-    );
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::resource('cocktails', CocktailController::class, [])->middleware(['auth', 'verified']);
+Route::resource('orders', OrderRecordController::class, [])->middleware(['auth', 'verified']);
+
 
 
 Route::middleware('auth')->group(function () {
@@ -37,4 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+
+
+// Route::get('/test', function () {
+//     return Inertia::render('test');
+// });

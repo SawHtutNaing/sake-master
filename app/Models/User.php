@@ -44,4 +44,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function orders()
+    {
+        // return $this->hasMany(OrderRecord::class);
+
+        return OrderRecord::with('cocktail')->where('user_id', $this->id)->get();
+    }
+
+    // user -> orders (name မပါ ) -> name ထည့် မည် 
 }
